@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: martintransit 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: martintransit
+  template:
+    metadata:
+      labels:
+        app: martintransit 
+    spec:
+      containers:
+        - name: martintransit 
+          image: testing1010.azurecr.io/martintransit
+          ports:
+          - containerPort: 80
